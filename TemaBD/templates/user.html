@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %} 
+	{% if messages %} 
+		{% for msg in messages %}
+			<p>{{msg}}</p>
+		{% endfor %} 
+	{% endif %} 
+{% endwith %}
+<h1>Welcome {{user}}</h1>
+<form action="#" method="POST">
+
+<div class="container">
+	<div>
+	<label for="custommer">Name of customer</label>
+	<input type="text" id="custommer" name="custommer" placeholder="Customer" value="{{custommer if custommer}}"/>
+	</div>
+
+	<div>
+	<label for="product">Name of the product</label>
+	<input type="text" id="product" name="product" placeholder="Enter the command"/>
+	</div>
+	
+	<div>
+	<label for="cuantity">Cuantity</label>
+	<input type="text" id="cuantity" name="cuantity" placeholder="How many?"/>
+	</div>
+	
+	<div>
+	<label for="ph_nr">Phone numer</label>
+	<input type="text" id="ph_nr" name="ph_nr" placeholder="Ph. nr." value="{{ph_nr if ph_nr}}"/>
+	</div>
+	
+	<div>
+	<label for="email">Email</label>
+	<input type="text" id="email" name="email" placeholder="Email" value="{{email if email}}"/>
+	</div>
+	
+	<div>
+	<input type="submit" value="submit" />
+	</div>
+	</div>
+</form>
+{% endblock %}

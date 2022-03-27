@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}User{% endblock %}
+{% block content %}
+{% with messages = get_flashed_messages() %} 
+	{% if messages %} 
+		{% for msg in messages %}
+			<p>{{msg}}</p>
+		{% endfor %} 
+	{% endif %} 
+{% endwith %}
+<h1>Welcome {{user}}</h1>
+<p>Choose what commands to delete</p>
+<form action="#" method="POST">
+
+<div class="container">
+	<div>
+	<label for="type">Type of the field you want to modify</label>
+	<input type="text" id="type" name="type" placeholder="Field to change"/>
+	</div>
+	
+	<div>
+	<label for="changeTo">Value of the new entry</label>
+	<input type="text" id="changeTo" name="changeTo" placeholder="Enter the command"/>
+	</div>
+	
+	<div>
+	<input type="submit" value="update" />
+	</div>
+</div>
+</form>
+{% endblock %}
