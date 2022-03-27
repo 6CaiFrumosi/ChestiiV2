@@ -4,7 +4,7 @@ hostName = "bd-dc.cs.tuiasi.ro"
 portNumber = "1539"
 serviceName = "orcl"
 user = "bd083"
-password = "Leloluch1998"
+password = "(:"
 
 dsn_tns = makedsn(hostName, portNumber, service_name=serviceName)
 conn = connect(user=user, password=password, dsn=dsn_tns)
